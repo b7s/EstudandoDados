@@ -21,13 +21,15 @@ class EnemController extends Controller
     public function store(Request $request)
     {
         if ($request->hasFile('csv_file')) {
-            return $this->uploadAndSaveCSV($request->file('csv_file'));
+			$file = $request->file('csv_file');
+            
+			return $this->uploadAndSaveCSV($file->getRealPath());
         }
 
         return response()->json(['error' => 'Nenhum arquivo enviado']);
     }
 
-    public function uploadAndSaveCSV($filePath = null, $truncate = false)
+    public function uploadAndSaveCSV(string $filePath = '', $truncate = false)
     {
         if(empty($filePath))
             return ['message' => 'Nenhum arquivo enviado']);
@@ -35,12 +37,7 @@ class EnemController extends Controller
 		// Remover o limite de memória (não recomendado em produção)
 		ini_set('memory_limit', '-1');
 
-        if(!is_string($filePath))
-        {
-            $filePath = $filePath->getRealPath();
-        }
-
-        // Configure o tamanho do chunk, por exemplo, 100 MB
+        // Configure o tamanho do chunk, por exemplo, 250 MB
         $chunkSize = 250 * (1024 * 1024);
 
         // Abra um stream para o arquivo no disco
@@ -86,7 +83,7 @@ class EnemController extends Controller
                             'conclusao_ensino_medio' => $dados[7],
                             'tipo_escola' => $dados[9],
                             'uf' => $dados[15],
-                            'cidade' => mb_convert_encoding($dados[20], 'UTF-8', 'latin1'),
+                            'cidade' => mb_convert_encoding($dados[20], 'UTF-8', 'latin1'),// Converte para evitar erro de codificação, já que o arquivo vem no formato ISO-8859-1 (conhecido como latin1)
                             'escolaridade_pai' => $dados[51],
                             'escolaridade_mae' => $dados[52],
                             'ocupacao_pai' => $dados[53],

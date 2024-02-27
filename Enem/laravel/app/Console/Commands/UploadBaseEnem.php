@@ -26,7 +26,7 @@ class UploadBaseEnem extends Command
         $this->info(' - Uploading: ' . $valor);
 
         $controller = new EnemController();
-        $res = $controller->uploadAndSaveCSV($valor ?? "C:\Users\b7s\Downloads\TESTE_MICRODADOS_ENEM_2022.csv", $truncate);
+        $res = $controller->uploadAndSaveCSV($valor, $truncate);
 
         $this->info('  -> Linhas salvas: ' . $res['lines']);
 
