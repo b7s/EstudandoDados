@@ -22,7 +22,7 @@ class EnemController extends Controller
     {
         if ($request->hasFile('csv_file')) {
 			$file = $request->file('csv_file');
-            
+
 			return $this->uploadAndSaveCSV($file->getRealPath());
         }
 
@@ -32,7 +32,7 @@ class EnemController extends Controller
     public function uploadAndSaveCSV(string $filePath = '', $truncate = false)
     {
         if(empty($filePath))
-            return ['message' => 'Nenhum arquivo enviado']);
+            return ['message' => 'Nenhum arquivo enviado'];
 
 		// Remover o limite de memória (não recomendado em produção)
 		ini_set('memory_limit', '-1');

@@ -70,7 +70,7 @@ return new class extends Migration
          * O "de x para" dos dados podem ser encontrados aqui:
          * microdados_enem_2022/INPUTS/INPUT_R_MICRODADOS_ENEM_2022.R
          */
-        Schema::create('taxonomy', function (Blueprint $table) {
+        Schema::create('taxonomies', function (Blueprint $table) {
             $table->id();
 
             $table->enum('type', [
@@ -80,6 +80,7 @@ return new class extends Migration
                 'nacionalidade',
                 'conclusao_ensino',
                 'tipo_escola',
+                'presenca',
                 'lingua',
             ]);
 

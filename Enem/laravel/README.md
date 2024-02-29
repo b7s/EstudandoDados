@@ -16,12 +16,18 @@ Para isso precisamos ter nosso ambiente configurado com os arquivos necessários
 3) Faça as configurações prévias de um projeto Laravel: Crie a base no banco que irá utilizar, adicione as credenciais e o nome do banco no arquivo `.env`
 
 ### Criando os arquivos necessários:
+
 1) Crie o **Controller** e o **Model**
-   `php artisan make:controller`
-    1) Vai ser perguntado o nome do Controller: `EnemController`
-    2) Vai ser perguntado qual o tipo: `resource`
-    3) Vai ser perguntado se já tem um Model para associar. Adicione o nome: `Enem`
-        - Vai ser questionado que não tem um Model com esse nome. Digite `yes` ou aperte _enter_ para criar o model
+
+```shell
+php artisan make:controller 
+```
+
+- Vai ser perguntado o nome do Controller: `EnemController`
+- Vai ser perguntado qual o tipo: `resource`
+- Vai ser perguntado se já tem um Model para associar. Adicione o nome: `Enem`
+    - Vai ser questionado que não tem um Model com esse nome. Digite `yes` ou aperte _enter_ para criar o model
+
 2) Crie uma **[Migration](https://laravel.com/docs/10.x/migrations)**, que será responsável por criar a tabela no banco, que irá guardar os dados do arquivo CSV
 3) Crie um comando para executar o metodo que iremos criar:
     `php artisan make:command UploadBaseEnem`
@@ -33,6 +39,17 @@ protected $commands = [
 ```
    - Execute no terminal o comando com `php artisan base:up C:\path_to_file\...`
 	   - Existe uma opção específica que pode ser usada para limpar a base principal antes de subir os dados: `--truncate`
+4) Vamos criar um arquivo de _Seed_ para inserir as categorias no banco
+```shell
+# Criando o arquivo
+php artisan make:seeder EnemCategories
+# (Confira o código usado abaixo)
+```
+```shell
+# Run Seed
+php artisan db:seed
+```
+
 
 ### O código usado:
 
