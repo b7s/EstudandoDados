@@ -39,22 +39,23 @@ protected $commands = [
 ```
    - Execute no terminal o comando com `php artisan base:up C:\path_to_file\...`
 	   - Existe uma opção específica que pode ser usada para limpar a base principal antes de subir os dados: `--truncate`
-4) Vamos criar um arquivo de _Seed_ para inserir as categorias no banco
+4) Vamos criar um arquivo de _Seed_ para inserir as categorias no banco.
+> Aqui escolhi criar uma única tabela - chamada 'Taxonomies' - para guardar as categorias, mas, poderia criar uma tabela para cada uma para trabalhar no modelo estrela no Power BI ou outra ferramenta. 
 ```shell
 # Criando o arquivo
 php artisan make:seeder EnemCategories
 # (Confira o código usado abaixo)
 ```
 ```shell
-# Run Seed
-php artisan db:seed
+# Executar a seed
+php artisan db:seed --class=EnemCategories
 ```
-
 
 ### O código usado:
 
 - Migration: [2024_02_27_004312_create_enem_table.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/database/migrations/2024_02_27_004312_create_enem_table.php)
 - Controller: [EnemController.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/app/Http/Controllers/EnemController.php)
+- Seed: [EnemCategories.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/database/seeders/EnemCategories.php)
 - Comando (console): [UploadBaseEnem.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/app/Console/Commands/UploadBaseEnem.php)
 
 No código do **controller**, o arquivo é aberto como um stream e salvo em partes (_chunks_) usando `updateOrCreate`. Isso permite que você gerencie arquivos grandes sem consumir muita memória.
