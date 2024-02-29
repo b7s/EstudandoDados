@@ -58,6 +58,12 @@ php artisan db:seed --class=EnemCategories
 - Seed: [EnemCategories.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/database/seeders/EnemCategories.php)
 - Comando (console): [UploadBaseEnem.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/app/Console/Commands/UploadBaseEnem.php)
 
+----
+
+### Informações úteis
+
+#### Controller
+
 No código do **controller**, o arquivo é aberto como um stream e salvo em partes (_chunks_) usando `updateOrCreate`. Isso permite que você gerencie arquivos grandes sem consumir muita memória.
 
 Lembre-se de configurar o `memory_limit` caso precise processar mais dados de uma vez.
@@ -72,3 +78,8 @@ Configure o chunk que deve ser processado por vez:
 // Configure o tamanho do chunk, por exemplo, 250 MB (isso afeta a memória RAM utilizada)
 $chunkSize = 250 * (1024 * 1024);
 ```
+
+#### Seed (Taxonomies)
+
+Conforme você pode conferir na Migration, a tabela de _Taxonomia_ tem como chave única as colunas `type` e `key` de forma conjunta, evitando duplicidade e podendo ser usada para realizar o JOIN em eventual query.
+
