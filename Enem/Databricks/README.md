@@ -1,4 +1,4 @@
-
+> AINDA EM CONTRUÇÃO
 
 Crie um _notebook_ para tratar os dados enviados.
 
@@ -14,7 +14,7 @@ CREATE DATABASE IF NOT EXISTS enem_silver;
 CREATE TABLE IF NOT EXISTS enem_silver.microdados;
 ```
 
-3) **Transformar** os dados e inserir na tabela Silver
+3) **Transformar os dados** e inserir na tabela Silver
     - Aqui já é possivel trabalhar com os dados na sua ferramenta (no meu caso, vou trabalhar no Power BI). Podemos também criar as análises em outro notebook para trabalhar com os dados da *Silver* em um banco *Gold*
 ```sparksql
 %sql
