@@ -1,6 +1,6 @@
 > AINDA EM CONTRUÇÃO
 
-Crie um _notebook_ para tratar os dados enviados.
+Crie um _notebook_, nomei como achar melhor, mas chamei o meu de enem_silver, ele será usado para tratar os dados upados do arquivo do Enem.
 
 1) Criar a base `silver`
 ```sparksql
