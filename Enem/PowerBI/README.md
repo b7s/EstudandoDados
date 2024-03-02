@@ -92,7 +92,7 @@ Os visuais utilizados possibilitam análise automáticas ou mesmo análises manu
 
 ![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/arvore-decomposicao.png)
 
-![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/graficos gerais.png)
+![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/graficos-gerais.png)
 
 ----
 
