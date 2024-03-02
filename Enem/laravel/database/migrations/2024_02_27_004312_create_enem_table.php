@@ -81,6 +81,7 @@ return new class extends Migration
                 'conclusao_ensino',
                 'tipo_escola',
                 'presenca',
+                'renda_familiar',
                 'lingua',
             ]);
 

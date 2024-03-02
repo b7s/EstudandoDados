@@ -15,13 +15,14 @@ class EnemCategories extends Seeder
     public function run(): void
     {
         $seed = [
-            'faixa_etaria' => $this->faixaEtaria(),
+            /*'faixa_etaria' => $this->faixaEtaria(),
             'estado_civil' => $this->estadoCivil(),
             'cor_raca' => $this->corRaca(),
             'nacionalidade' => $this->nacionalidade(),
             'conclusao_ensino' => $this->conclusaoEnsino(),
             'tipo_escola' => $this->tipoEscola(),
-            'presenca' => $this->presenca(),
+            'presenca' => $this->presenca(),*/
+            'renda_familiar' => $this->renda_familiar(),
         ];
 
         DB::transaction(function() use ($seed) {
@@ -32,26 +33,64 @@ class EnemCategories extends Seeder
         });
     }
 
+    private function renda_familiar()
+    {
+        $rendas = [
+            'A' => 'Nenhuma Renda',
+            'B' => 'Até R$ 1.212,00',
+            'C' => 'R$ 1.212,01 - R$ 1.818,00',
+            'D' => 'R$ 1.818,01 - R$ 3.030,00',
+            'E' => 'R$ 1.818,01 - R$ 3.030,00',
+            'F' => 'R$ 3.030,01 - R$ 4.848,00',
+            'G' => 'R$ 3.030,01 - R$ 4.848,00',
+            'H' => 'R$ 4.848,01 - R$ 7.272,00',
+            'I' => 'R$ 4.848,01 - R$ 7.272,00',
+            'J' => 'R$ 7.272,01 - R$ 10.908,00',
+            'K' => 'R$ 7.272,01 - R$ 10.908,00',
+            'L' => 'R$ 7.272,01 - R$ 10.908,00',
+            'M' => 'R$ 10.908,01 - R$ 18.180,00',
+            'N' => 'R$ 10.908,01 - R$ 18.180,00',
+            'O' => 'R$ 10.908,01 - R$ 18.180,00',
+            'P' => 'R$ 18.180,01 - R$ 24.240,00',
+            'Q' => 'Acima de R$ 24.240,00'
+        ];
+
+        $arr = [];
+
+        foreach($rendas as $i => $r)
+        {
+            $arr[] = [
+                'type' => 'renda_familiar',
+                'key' => $i,
+                'value' => $r,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+        }
+        
+        return $arr;
+    }
+
     private function presenca()
     {
         return [
             [
                 'type' => 'presenca',
-                'key' => 1,
+                'key' => 0,
                 'value' => 'Faltou à prova',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'type' => 'presenca',
-                'key' => 2,
+                'key' => 1,
                 'value' => 'Presente na prova',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'type' => 'presenca',
-                'key' => 3,
+                'key' => 2,
                 'value' => 'Eliminado na prova',
                 'created_at' => now(),
                 'updated_at' => now(),
