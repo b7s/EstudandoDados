@@ -22,7 +22,7 @@ Os [microdados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/
     - Faça os relacionamentos de cada tabela dimensão (taxonomias) com a tabela fato (enem) na sua coluna respectiva
     - Para mais detalhes, baixe o arquivo do Power BI
 
-![relacionamentos](https://img001.prntscr.com/file/img001/L4sq1J8XThqkISbq3KkbzQ.png)
+![relacionamentos](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/relacionamentos.png)
 
 3) Algumas coisas foram criadas para análise 
     1) Colunas:
@@ -34,13 +34,13 @@ Os [microdados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/
 
 
 ### Calculando
-Vou exemplificar aqui alguns calculos, mas você pode conferir todos no arquivo.
+Vou exemplificar aqui alguns calculos, mas você pode conferir todos no arquivo. Como a base apesar de grande não é complexa, os calculos são relativamente simples. Confira alguns abaixo.
 
-#### Coluna de nota média
+#### Coluna: de nota média
 Vamos somar e dividir por 5 todas as colunas referentes as notas das avaliações (incluíndo a redação). É possivel fazer diretamente em uma medida, mas isso facilita na criação da categorização e nos outros calculos. 
 Adicione uma coluna na tabela `fato_enem` com o código abaixo:
 
-```js
+```php
 // Coluna
 nota média = DIVIDE(
     'fato_enem'[nota_ch] + 
@@ -52,10 +52,18 @@ nota média = DIVIDE(
 )
 ```
 
+#### Coluna: Categoria da Nota
+Criando uma série de 100 em 100 com base na nota e agrupa ela nesse intervalo entr o x00 e x99
+
+```php
+// Coluna
+Categoria da Nota = ROUNDDOWN(DIVIDE([nota média], 100), 0) * 100
+```
+
 #### Nota média
 Vamos forçar calcular somente a média de quem esteve presente nos dois dias de prova. Para isso usa-se o filtro `fato_enem[presente] = 1`. Calculamos a média usando a coluna criada acima.
 
-```js
+```php
 // Medida
 Nota média = CALCULATE(
     AVERAGE(fato_enem[nota média]),
@@ -63,12 +71,28 @@ Nota média = CALCULATE(
 )
 ```
 
-#### Categoria da Nota
-Criando uma série de 100 em 100 com base na nota e agrupa ela nesse intervalo entr o x00 e x99
-```js
-Categoria da Nota = ROUNDDOWN(DIVIDE([nota média], 100), 0) * 100
-```
+## Resultado 
 
+![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/visual_geral_dash_enem.png)
+
+Com o dash, foi possivel concluir que:
+**Positivamente:**
+- Quanto maior a renda, melhor a nota
+- Pessoas com menos de 18 anos tem desempenho superior
+- Ensino médio recem concluído
+
+**Negativamente:**
+- A idade entre 35 e 65 são as que levam a nota média geral para baixo
+- Alunos de escola pública tem um desempenho mais baixo
+- Família sem renda ou com renda de até um salário mínimo (da época), também tem desempenho inferior
+- Não finalizou o ensino médio ou já finalizado há mais tempo
+
+### Visuais dinâmicos
+Os visuais utilizados possibilitam análise automáticas ou mesmo análises manuais, onde você pode combinar filtros apenas clicando nas colunas desejadas ou aplicando os filtros disponíveis no dash.
+
+![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/arvore-decomposicao.png)
+
+![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/graficos gerais.png)
 
 ----
 
