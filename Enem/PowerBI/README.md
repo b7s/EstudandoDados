@@ -22,7 +22,9 @@ Os [microdados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/
     - Faça os relacionamentos de cada tabela dimensão (taxonomias) com a tabela fato (enem) na sua coluna respectiva
     - Para mais detalhes, baixe o arquivo do Power BI
 
-![relacionamentos](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/relacionamentos.png)
+<p align="center">
+    <img src="https://meusapps.top/estudos/imagens-publicas/analise-enem-22/relacionamentos.png" alt="relacionamentos">
+</p>
 
 3) Algumas coisas foram criadas para análise 
     1) Colunas:
@@ -73,7 +75,9 @@ Nota média = CALCULATE(
 
 ## Resultado 
 
-![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/visual_geral_dash_enem.png)
+<p align="center">
+    <img src="https://meusapps.top/estudos/imagens-publicas/analise-enem-22/visual_geral_dash_enem.png" alt="">
+</p>
 
 Com o dash, foi possivel concluir que:
 **Positivamente:**
@@ -90,9 +94,13 @@ Com o dash, foi possivel concluir que:
 ### Visuais dinâmicos
 Os visuais utilizados possibilitam análise automáticas ou mesmo análises manuais, onde você pode combinar filtros apenas clicando nas colunas desejadas ou aplicando os filtros disponíveis no dash.
 
-![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/arvore-decomposicao.png)
+<p align="center">
+    <img src="https://meusapps.top/estudos/imagens-publicas/analise-enem-22/arvore-decomposicao.png" alt="">
+</p>
 
-![visual geral do dash](https://meusapps.top/estudos/imagens-publicas/analise-enem-22/graficos-gerais.png)
+<p align="center">
+    <img src="https://meusapps.top/estudos/imagens-publicas/analise-enem-22/graficos-gerais.png" alt="">
+</p>
 
 ----
 
