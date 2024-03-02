@@ -22,7 +22,7 @@ Os [microdados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/
     - Faça os relacionamentos de cada tabela dimensão (taxonomias) com a tabela fato (enem) na sua coluna respectiva
     - Para mais detalhes, baixe o arquivo do Power BI
 
-![relacionamentos](https://prnt.sc/Ld3VmHFOXpds)
+![relacionamentos](https://img001.prntscr.com/file/img001/L4sq1J8XThqkISbq3KkbzQ.png)
 
 3) Algumas coisas foram criadas para análise 
     1) Colunas:
