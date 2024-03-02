@@ -1,32 +1,22 @@
+Esse é projeto de dados que engloba todas as fases, desde a coleta até o deploy. Focado na limpeza, análise exploratória e modelagem dos microdados do Enem 2022, utilizando dados públicos reais. A estruturação da solução segue o framework CRISP-DM, incluindo a compreensão do problema, análise dos dados, limpeza, modelagem e deploy.
 
-Este é um projeto abrangente de ciência de dados, englobando todas as fases, desde a coleta até o deploy, focado na limpeza, análise exploratória e modelagem dos microdados do Enem 2022, utilizando dados públicos reais. A estruturação da solução segue o framework CRISP-DM, incluindo a compreensão do problema, análise dos dados, limpeza, modelagem e deploy.
+As análises podem ajudar a identificar os fatores e como a nota do candidato é impactada. Conseguindo identificar talentos escondidos e necessidades individuais para direcionar melhor os recursos e as estratégias para reduzir os impactos no ensino.
 
-A limpeza dos dados foi essencial, dada a grande dimensão do conjunto original de microdados, ultrapassando 2 GB, o que tornaria a manipulação, análise e modelagem inviáveis.
+## Fases
 
-A análise e modelagem são conduzidas em duas abordagens distintas:
+1) **Limpeza dos dados**: Parte essencial, visto que temos uma base de passa dos 2 GB em sua base principal, mais várias bases menores de categoria (chamada aqui de taxonomia).
 
-1) **Análise e modelagem de desempenho**: Objetiva identificar as principais variáveis que impactam a nota do candidato, sua relação com o desempenho e como podem ser usadas na predição. Para isso, utiliza-se um modelo de Regressão Lasso.
+2) **Análise e modelagem de desempenho**: Objetiva identificar as principais variáveis que impactam a nota do candidato, sua relação com o desempenho e como podem ser usadas na predição. Para isso, utiliza-se um modelo de Regressão Lasso.
 
-2) **Análise e modelagem de abstenção**: Tem como foco identificar os fatores que influenciam a ausência do candidato na prova, analisando como esses fatores se relacionam e utilizando um modelo de Regressão Logística para prever a probabilidade de abstenção do estudante.
+### 1. Limpeza dos dados 
 
-Essas análises têm potencial aplicação em interesses educacionais, possibilitando ao governo implementar intervenções preventivas, aprimorar a comunicação e desenvolver estratégias para reduzir a alta taxa de abstenção em pontos críticos, melhorando assim a qualidade do exame e da educação no país.
+Essa é a parte mais demorada dado o tamanho da base. Aqui escolhi fazer um teste em 3 plataformas visando apenas estudos:
+1) **Databricks**: [Upando e limpando os dados com Databricks e ProtonSQL](https://github.com/b7s/EstudandoDados/blob/main/Enem/Databricks/)
+2) **Airbyte**: [Criando uma automação para salvar a base em um banco realcional usando Airbyte](https://github.com/b7s/EstudandoDados/blob/main/Enem/airbite/)
+3) **Laravel**: [Criando uma automação em linha de comando com Laravel e subindo os dados para um banco relacional](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/)
 
-Adicionalmente, a identificação dos fatores que mais impactam a nota do candidato permite ao governo identificar talentos potenciais e necessidades individuais, possibilitando o desenvolvimento de estratégias educacionais mais eficazes.
+### 2. Análise de Desempenho
 
-Para facilitar o uso prático dessas análises, foram desenvolvidas duas APIs Flask para o deploy dos modelos, proporcionando a previsão da nota ou da probabilidade de abstenção com base em dados socioeconômicos e educacionais do candidato.
+Toda análise é realizada no Power BI para ganhar tempo e ter maior praticidade na criação dos visuais, além disso, possibilitando filtros avançados e combinações complexas de filtros para o usuário final, caso ele ache necessário, abrindo um leque gigante de possibilidades de análises, saíndo das análises básicas e demoradas feitas apenas via código.
 
-Cada etapa de análise e modelagem será detalhada nos próximos tópicos.
-
-## 1. Limpeza dos dados 
-
-## 2. Análise de Desempenho
-
-#### Passos no Power
-1) Adicionar a tabela principal do `enem` (fato) e a tabela `taxonomies` (dimensão)
-2) Criar os relacionamentos das categorias
-    - Para isso, vamos adicionar a tabela `Taxonomies` e criar referências dela para cada categoria (confira no arquivo como ficou), servindo como tabelas `Dimensão`. Isso elimina a necessidade de ter várias conexões ativas com o banco, puxando os dados apenas uma vez, é útil quando se pretende ter uma base atualizando várias vezes.
-    - Faça os relacionamentos de cada tabela dimensão (taxonomias) com a tabela fato (enem) na sua coluna respectiva
-3) Criar uma coluna para identificar a presença 
-4) Criar uma medida indicando a nota média geral no exame para os candidatos.
-
-## 3. Análise de Abstenção
+Confira mais: [Análise e visual com Power BI](https://github.com/b7s/EstudandoDados/blob/main/Enem/PowerBI/)

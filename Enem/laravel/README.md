@@ -1,4 +1,4 @@
-O código criado em PHP (Laravel) é responsável por subir a base de microdados do Enem de 2022 para o banco de dados MySQL (nesse exemplo). A base oficial pode ser encontrada no link: [Enem — Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira | Inep (www.gov.br)](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem),
+O código criado em PHP (Laravel) é responsável por subir a base de microdados do Enem de 2022 para o banco de dados MySQL (nesse exemplo), via linha de comando. A base oficial pode ser encontrada no link: [Enem — Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira | Inep (www.gov.br)](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem),
 
 ----
 
