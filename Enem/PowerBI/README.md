@@ -36,6 +36,7 @@ Os [microdados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/
 
 
 ### Calculando
+
 Vou exemplificar aqui alguns calculos, mas você pode conferir todos no arquivo. Como a base apesar de grande não é complexa, os calculos são relativamente simples. Confira alguns abaixo.
 
 #### Coluna: de nota média
@@ -80,28 +81,34 @@ Nota média = CALCULATE(
 </p>
 
 Com o dash, foi possivel concluir que:
-**Positivamente:**
+
 - Quanto maior a renda, melhor a nota
 - Pessoas com menos de 18 anos tem desempenho superior
 - Ensino médio recem concluído
-
-**Negativamente:**
 - A idade entre 35 e 65 são as que levam a nota média geral para baixo
 - Alunos de escola pública tem um desempenho mais baixo
 - Família sem renda ou com renda de até um salário mínimo (da época), também tem desempenho inferior
 - Não finalizou o ensino médio ou já finalizado há mais tempo
 
 ### Visuais dinâmicos
-Os visuais utilizados possibilitam análise automáticas ou mesmo análises manuais, onde você pode combinar filtros apenas clicando nas colunas desejadas ou aplicando os filtros disponíveis no dash.
 
-<p align="center">
-    <img src="https://meusapps.top/estudos/imagens-publicas/analise-enem-22/arvore-decomposicao.png" alt="">
-</p>
+Os visuais utilizados possibilitam análise automáticas, onde você pode combinar o automático do Power BI com filtros, apenas clicando nas colunas desejadas ou aplicando os filtros disponíveis no dash.
 
 <p align="center">
     <img src="https://meusapps.top/estudos/imagens-publicas/analise-enem-22/graficos-gerais.png" alt="">
 </p>
 
+
+### Monte sua análise
+
+É possivel analisar via árvore hierarquica ou gráfico, segmento do melhor modo para obter o resultado desejado.
+
+<p align="center">
+    <img src="https://meusapps.top/estudos/imagens-publicas/analise-enem-22/arvore-decomposicao.png" alt="">
+</p>
+
 ----
 
 **O arquivo completo do Power BI (visual + dados) pode ser baixado no link**: https://1drv.ms/u/s!Alu3NT3bt007gtkhk1jKtNRmeev-nw?e=3wCnQo
+
+[LinkedIn](https://www.linkedin.com/in/brunotenorios/)
