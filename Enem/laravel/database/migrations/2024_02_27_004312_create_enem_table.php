@@ -28,6 +28,7 @@ return new class extends Migration
             $table->tinyInteger('faixa_etaria')->nullable();
             $table->enum('sexo', ['M', 'F'])->nullable();
             $table->tinyInteger('estado_civil')->nullable();
+            $table->tinyInteger('cor_raca')->nullable();
             $table->tinyInteger('conclusao_ensino_medio')->nullable();
             $table->tinyInteger('tipo_escola')->nullable();
 
@@ -51,21 +52,21 @@ return new class extends Migration
             $table->tinyInteger('presenca_lc')->nullable();
             $table->tinyInteger('presenca_mt')->nullable();
 
-            $table->float('nota_ch')->default(0);
-            $table->float('nota_cn')->default(0);
-            $table->float('nota_lc')->default(0);
-            $table->float('nota_mt')->default(0);
-            $table->float('nota_redacao')->default(0);
-            $table->float('nota_comp1')->default(0);
-            $table->float('nota_comp2')->default(0);
-            $table->float('nota_comp3')->default(0);
-            $table->float('nota_comp4')->default(0);
-            $table->float('nota_comp5')->default(0);
+            $table->float('nota_ch', 4)->default(0);
+            $table->float('nota_cn', 4)->default(0);
+            $table->float('nota_lc', 4)->default(0);
+            $table->float('nota_mt', 4)->default(0);
+            $table->float('nota_redacao', 4)->default(0);
+            $table->float('nota_comp1', 4)->default(0);
+            $table->float('nota_comp2', 4)->default(0);
+            $table->float('nota_comp3', 4)->default(0);
+            $table->float('nota_comp4', 4)->default(0);
+            $table->float('nota_comp5', 4)->default(0);
 
             $table->timestamps();
         });
 
-        /*
+        /**
          * Vamos criar uma tabela genérica para guardar a descrição dos campos, que serão utilizado posteriormente
          * O "de x para" dos dados podem ser encontrados aqui:
          * microdados_enem_2022/INPUTS/INPUT_R_MICRODADOS_ENEM_2022.R
@@ -93,6 +94,14 @@ return new class extends Migration
 
             $table->timestamps();
         });
+
+        /**
+         * Aqui teremos apenas os nomes dos estados para usar no gráfico de mapa
+         */
+        Schema::table('estados', function (Blueprint $table) {
+            $table->dropColumn('nome');
+            $table->dropColumn('abreviacao');
+        });
     }
 
     /**
@@ -102,5 +111,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('enem');
         Schema::dropIfExists('taxonomy');
+        Schema::dropIfExists('estados');
     }
 };

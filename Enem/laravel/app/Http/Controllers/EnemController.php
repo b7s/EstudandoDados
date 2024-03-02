@@ -72,6 +72,7 @@ class EnemController extends Controller
                     $dados = str_getcsv($linha, separator: ';');
 
                     // Salve os dados no banco de dados e ignore os erros que derem (como duplicatas), realizando o update na linha existente
+                    // Atenção a ordem das colunas (começando do zero no array criado acima)
                     try {
                         Enem::updateOrCreate([
                             'nu_inscricao' => $dados[0]
@@ -80,10 +81,11 @@ class EnemController extends Controller
                             'faixa_etaria' => $dados[2],
                             'sexo' => $dados[3],
                             'estado_civil' => $dados[4],
+                            'cor_raca' => $dados[5],
                             'conclusao_ensino_medio' => $dados[7],
                             'tipo_escola' => $dados[9],
-                            'uf' => $dados[15],
-                            'cidade' => mb_convert_encoding($dados[20], 'UTF-8', 'latin1'),// Converte para evitar erro de codificação, já que o arquivo vem no formato ISO-8859-1 (conhecido como latin1)
+                            'uf' => $dados[22],//uf da prova
+                            'cidade' => mb_convert_encoding($dados[20], 'UTF-8', 'latin1'),// Converte para UTF-8 para evitar erro de codificação, já que o arquivo vem no formato ISO-8859-1 (latin1)
                             'escolaridade_pai' => $dados[51],
                             'escolaridade_mae' => $dados[52],
                             'ocupacao_pai' => $dados[53],

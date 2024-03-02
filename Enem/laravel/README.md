@@ -50,12 +50,22 @@ php artisan make:seeder EnemCategories
 # Executar a seed
 php artisan db:seed --class=EnemCategories
 ```
+5) Vamos criar uma tabela para guardar os nomes complestos dos estados brasileiros, usaremos eles no visual de mapa para preencher as cores de cada estado. Importante: Os nomes não podem conter acentuação ou o gráfico do Power BI não reconhecerá.
+```shell
+# Criando o arquivo
+php artisan make:seeder EstadosBrasileiros
+# (Confira o código usado abaixo)
+```
+```shell
+# Executar a seed
+php artisan db:seed --class=EstadosBrasileiros
+```
 
 ### O código usado:
 
 - Migration: [2024_02_27_004312_create_enem_table.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/database/migrations/2024_02_27_004312_create_enem_table.php)
 - Controller: [EnemController.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/app/Http/Controllers/EnemController.php)
-- Seed: [EnemCategories.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/database/seeders/EnemCategories.php)
+- Seeds criadas: [Veja todas](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/database/seeders/)
 - Comando (console): [UploadBaseEnem.php](https://github.com/b7s/EstudandoDados/blob/main/Enem/laravel/app/Console/Commands/UploadBaseEnem.php)
 
 ----
