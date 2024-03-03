@@ -19,4 +19,4 @@ Essa é a parte mais demorada dado o tamanho da base. Aqui escolhi fazer um test
 
 Toda análise é realizada no Power BI para ganhar tempo e ter maior praticidade na criação dos visuais, além disso, possibilitando filtros avançados e combinações complexas de filtros para o usuário final, caso ele ache necessário, abrindo um leque gigante de possibilidades de análises, saíndo das análises básicas e demoradas feitas apenas via código.
 
-Confira mais: [Análise e visual com Power BI](https://github.com/b7s/EstudandoDados/blob/main/Enem/PowerBI/)
+**[Confira a análise no Power BI](https://github.com/b7s/EstudandoDados/blob/main/Enem/PowerBI/)**

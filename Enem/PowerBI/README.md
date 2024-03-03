@@ -111,4 +111,4 @@ Os visuais utilizados possibilitam análise automáticas, onde você pode combin
 
 **O arquivo completo do Power BI (visual + dados) pode ser baixado no link**: https://1drv.ms/u/s!Alu3NT3bt007gtkhk1jKtNRmeev-nw?e=3wCnQo
 
-[LinkedIn](https://www.linkedin.com/in/brunotenorios/)
+Meu [LinkedIn](https://www.linkedin.com/in/brunotenorios/)
