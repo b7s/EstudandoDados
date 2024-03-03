@@ -19,7 +19,8 @@ O arquivo baixado consiste em um _.zip_ com vários arquivos em .pdf, .csv, .r. 
 1) **DADO/MICRODADOS_ENEM_2022.csv**
    - Esse é o arquivo principal (e o maior de todos), nele termos todas as informações necessárias, assim como os IDs das categorias, que usaremos para criar os relacionamentos.
 2) **INPUTS/INPUT_R_MICRODADOS_ENEM_2022.R**
-   - Contem os nomes das categorias, como faixa etária, faixa salarial, escolaridade, etc.
+   - Contem os nomes das categorias, como faixa etária, faixa salarial, escolaridade, etc;
+   - As categorias não estão devidamente padronizadas, o que dificulta encontrar e saber exatamente onde fica cada item. Mas depois de garimpar, deu para usar esse arquivo como base.
 
 ### 2. Limpeza dos dados 
 
