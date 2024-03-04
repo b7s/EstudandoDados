@@ -128,3 +128,13 @@ SELECT
 FROM enem_bronze.microdados
 ```
 
+4) Extra: Visualizando os dados no Power BI dentro do Databricks
+
+```phyton
+from powerbiclient import QuickVisualize, get_dataset_confi, Report
+from powerbiclient.authentication import DeviceCodeLoginAuthentication
+
+PBI_view = QuickVisualize(get_dataset_confi(SelectedData))
+
+PBI_view
+```

@@ -80,7 +80,7 @@ Nota média = CALCULATE(
     <img src="https://meusapps.top/estudos/imagens-publicas/analise-enem-22/visual_geral_dash_enem.png" alt="">
 </p>
 
-Com o dash, foi possivel concluir que:
+**Com o dash, foi possivel concluir que:**
 
 - Quanto maior a renda, melhor a nota
 - Pessoas com menos de 18 anos tem desempenho superior
@@ -89,6 +89,9 @@ Com o dash, foi possivel concluir que:
 - Alunos de escola pública tem um desempenho mais baixo
 - Família sem renda ou com renda de até um salário mínimo (da época), também tem desempenho inferior
 - Não finalizou o ensino médio ou já finalizado há mais tempo
+
+Da para ir muito além com as análises, combinando os filtros.
+
 
 ### Visuais dinâmicos
 

@@ -15,21 +15,19 @@ class EnemCategories extends Seeder
     public function run(): void
     {
         $seed = [
-            /*'faixa_etaria' => $this->faixaEtaria(),
-            'estado_civil' => $this->estadoCivil(),
-            'cor_raca' => $this->corRaca(),
-            'nacionalidade' => $this->nacionalidade(),
-            'conclusao_ensino' => $this->conclusaoEnsino(),
-            'tipo_escola' => $this->tipoEscola(),
-            'presenca' => $this->presenca(),*/
-            'renda_familiar' => $this->renda_familiar(),
+            'faixa_etaria'      => $this->faixaEtaria(),
+            'estado_civil'      => $this->estadoCivil(),
+            'cor_raca'          => $this->corRaca(),
+            'nacionalidade'     => $this->nacionalidade(),
+            'conclusao_ensino'  => $this->conclusaoEnsino(),
+            'tipo_escola'       => $this->tipoEscola(),
+            'presenca'          => $this->presenca(),
+            'renda_familiar'    => $this->renda_familiar()
         ];
 
         DB::transaction(function() use ($seed) {
             foreach ($seed as $s)
-            {
                 Taxonomy::insert($s);
-            }
         });
     }
 
