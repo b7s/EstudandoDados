@@ -84,11 +84,11 @@ Nota média = CALCULATE(
 
 - Quanto maior a renda, melhor a nota
 - Pessoas com menos de 18 anos tem desempenho superior
-- Ensino médio recem concluído
+- Ensino médio recem concluído, tem desempenho melhor
 - A idade entre 35 e 65 são as que levam a nota média geral para baixo
 - Alunos de escola pública tem um desempenho mais baixo
 - Família sem renda ou com renda de até um salário mínimo (da época), também tem desempenho inferior
-- Não finalizou o ensino médio ou já finalizado há mais tempo
+- Não finalizou o ensino médio ou já finalizado há mais tempo, tem desempenho inferior
 
 Da para ir muito além com as análises, combinando os filtros.
 
