@@ -99,8 +99,8 @@ return new class extends Migration
          * Aqui teremos apenas os nomes dos estados para usar no gráfico de mapa
          */
         Schema::table('estados', function (Blueprint $table) {
-            $table->dropColumn('nome');
-            $table->dropColumn('abreviacao');
+            $table->string('nome', 30);
+            $table->string('abreviacao', 2);
         });
     }
 
